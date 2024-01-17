@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Body from "./components/Body/Body";
+import Footer from "./components/Footer/Footer";
+import Head from "./components/Head/Head";
+import { AuthContextProvider } from "./contexts/AuthContext";
 
-function App() {
+const App = () => {
+  const email = "josue@gmai.com";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContextProvider>
+      <div style={{ textAlign: "center" }}>
+        <Head email={email}></Head>
+        <Body email={email}></Body>
+        <Footer email={email}></Footer>
+      </div>
+    </AuthContextProvider>
   );
-}
+};
 
 export default App;
