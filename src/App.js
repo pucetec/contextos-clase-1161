@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+// Components
+import Head from "./components/Head/Head";
+import Body from "./components/Body/Body";
+import Footer from "./components/Footer/Footer";
+
+// Contexto
+import { AuthContextProvider } from "./context/AuthContext";
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContextProvider>
+      <div className="App d-flex flex-column align-items-center my-5 py-5 container">
+        <Head />
+        <Body />
+        <Footer />
+      </div>
+    </AuthContextProvider>
   );
 }
 
